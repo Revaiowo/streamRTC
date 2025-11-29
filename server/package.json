@@ -4,11 +4,12 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "module",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.ts",
-    "start": "node server.ts"
+    "start": "node build/server.js",
+    "build": "tsc",
+    "predev": "npm run build",
+    "dev": "concurrently \"tsc -w\" \"nodemon build/server.js\""
   },
   "dependencies": {
     "cors": "^2.8.5",
