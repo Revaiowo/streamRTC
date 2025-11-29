@@ -9,10 +9,13 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
+  // cors: {
+  //   origin: [FRONTEND_URL],
+  //   methods: ["GET", "POST"],
+  //   credentials: true,
+  // },
   cors: {
-    origin: [FRONTEND_URL],
-    methods: ["GET", "POST"],
-    credentials: true,
+    origin: "*",
   },
 });
 
